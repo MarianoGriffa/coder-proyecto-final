@@ -1,0 +1,587 @@
+/* Prioridad de orden de cascada :
+1 - ID
+2 - Class
+3 - Etiqueta 
+
+!important mata la cascada 
+*/
+/*VARIABLES*/
+@import "variables";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  color: $color-body;
+  font-family: $font-main;
+  line-height: 1.5em;
+  display: flex;  
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  /* propiedad -> color,  red -> valor   */
+  /* font-family: 'Pacifico', sans-serif; */
+  text-align: center;
+  font-size: 6rem;
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: 400;
+  color: $color-web;
+  padding: 20px 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: $color-white;
+} 
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-secundary;
+}
+
+p {
+  font-family: $font-main;
+}
+ 
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.header {
+  background-color: $color-web;
+  padding: 10px 40px; 
+} 
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
+.navbar {
+  background-color: $color-web;
+} 
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: end;
+}
+
+.navbar-nav .nav-link {
+  color: $color-white;
+} 
+
+.navbar-nav .nav-link.active {
+  color: $color-white; 
+}
+
+/* 
+.navbar-toggler  {
+  color: white; 
+} */
+.container img {
+  max-width: 100%;
+}
+
+.navbar-nav li {
+  color: $color-white; 
+  padding: 0.18rem 0.4rem;
+  margin: 0 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.navbar-nav li:hover {
+  background-color: rgb(126, 194, 197);
+}
+
+.container-hero {
+  text-align: center;
+  position: relative;
+}
+
+.hero .title-hero {
+  position: absolute; 
+  top: 140px;
+  bottom: 0;
+  right: 0; 
+  left: 0;
+  z-index: 1;
+  color: $color-web; 
+  font-family: $font-secundary;
+} 
+
+.hero p {
+  position: absolute;
+  top: 255px;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  color: $color-white; 
+}
+
+.hero img {
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.hero a {
+  position: absolute;
+  top: 290px;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  padding: 12px 32px;
+  border: 2px solid $color-white;
+  border-radius: 5px;
+  background-color: transparent;
+  color: $color-white; 
+  font-size: 16px; 
+  font-weight: bold;
+  width: 250px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.hero a:hover {
+  background-color: $color-light;
+  color: $color-web; 
+  border: 3px solid $color-web;
+} 
+
+.container-historia {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  justify-content: center;
+  gap: 60px;
+  margin: 80px 80px 0;
+}
+
+.historia {
+  text-align: center;
+  margin: 0 auto 80px; 
+}
+
+.historia p {
+  font-size: 18px;
+}
+
+.historia h3 {
+  margin: 10px 0 20px;
+}
+
+.img-historia {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 80px;
+}
+
+.img-historia img {
+  width: 100%;
+}
+
+.btn-up {
+  display: flex;
+  background-color: transparent;
+  color: $color-web;
+  font-size: 2.5rem;
+  position: sticky;
+} 
+
+.btn-up i:hover {
+  background-color: $color-web;
+  color: $color-white; 
+  border: none; 
+  border-radius: 50%;
+}
+
+.btn-up i {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+.container-productos {
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: #f3f3f3;
+  padding-top: 20px;
+}
+
+.card-producto {
+  background-color: $color-light;
+  margin: 40px; 
+  width: 350px;
+  height: auto; 
+  padding: 40px; 
+  border-radius: 8px;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.04);
+}
+
+.descuento {
+  position: absolute;
+  top: 0;
+  right: -50px;
+  padding: 5px 20px;
+  background-color: rgba(65, 234, 65, 0.703);
+  color: $color-white;
+  font-weight: bold; 
+}
+
+.card-productos img {
+  width: 360px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: none;
+}
+
+.card-producto h6 {
+  font-size: 18px;
+  color: #503e3e;
+  text-align: center;
+  margin: 10px 0 10px;
+  text-transform: uppercase;
+}
+
+.card-producto p {
+  margin-bottom: 15px;
+}
+
+.card-producto a {
+  background-color: darkcyan;
+  color: $color-white;
+  padding: 5px 20px; 
+  text-align: center;
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+
+.title-servicios {
+  text-align: center;
+  margin: 40px 0 40px;
+}
+
+.container-servicios {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 80px;
+  flex-wrap: wrap;
+  margin: 0 80px 40px;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.img-servicios {
+  width: 100px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.img-servicios img {
+  max-width: 100%;
+}
+
+.card-servicios p {
+  font-size: 18px;
+  text-align: center;
+}
+
+.title-contacto {
+  text-align: center;
+  margin: 30px 0 50px;
+}
+
+.container-contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 80px 40px;
+  flex-wrap: wrap-reverse; 
+} 
+
+.container-map {
+  margin-right: 40px;
+}
+
+.container-form {
+  padding: 40px;
+  border: 2px solid #222;
+  border-radius: 5px;
+}
+
+.container-form h4 {
+  font-size: 15px; 
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  max-width: 380px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+.formulario label {
+  display: block;
+}
+
+.formulario input {
+  padding: 8px;
+  width: 380px;
+  margin-bottom: 15px;
+} 
+
+.formulario .btn-submit {
+  margin: 0;
+  background-color: $color-web;
+  color: $color-white;
+  border-radius: 5px; 
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 20px;
+} 
+
+.formulario .btn-submit:hover {
+  background-color: rgb(126, 194, 197);
+}
+
+.formulario textarea {
+  display: block;
+  margin: 10px 0 10px 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #252525;
+  background-color: #f3f3f3;
+  margin-top: auto;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer p a {
+  color: $color-web;
+  font-weight: 700;
+}
+
+.footer img {
+  width: 25px;
+  margin: 0 0.5rem;
+}  
+ 
+.btn-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hero .title-hero {
+    font-size: 3rem;
+  }
+  .hero p {
+    top: 200px;
+  }
+  .hero a {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    top: 240px;
+  }
+  .nav {
+    display: block;
+    height: auto;
+    text-align: center;
+  }
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+  }
+  .navbar-nav {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+  }
+  .navbar-nav li a:hover {
+    background-color: rgba(126, 194, 197, 0.53);
+  }
+  .container-historia {
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .container-productos {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+
+  .card-producto {
+    width: 250px;
+    height: auto;
+    padding: 20px; 
+  }
+ 
+  .descuento {
+    position: absolute;
+    top: 0; 
+    right: -50px;
+    padding: 2px 10px;
+    font-size: 0.8rem;
+  }
+  .container-servicios {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+  .img-historia {
+    max-width: 400px;
+  }
+
+  .container-contacto {
+    gap: 60px;
+  } 
+
+  .container-map {
+    margin-right: 0;
+  }  
+
+  .container-map iframe {
+    width: 400px;
+    height: 380px;
+  } 
+  
+  .container-form {
+    padding: 30px;
+    margin: 0 80px;
+  }  
+  
+  .formulario input {
+    padding: 6px;
+    margin-bottom: 12px; 
+  }
+
+  .formulario .btn-submit {
+    margin: 0;
+    background-color: $color-web;
+    color: $color-white;
+    border-radius: 5px; 
+    border: none;
+    font-size: 1rem;
+    cursor: pointer; 
+    margin-top: 20px;
+  } 
+
+  .formulario textarea {
+    display: block;
+    margin: 5px 0 5px; 
+  } 
+  
+
+}
+@media screen and (max-width: 420px) {
+  .container-servicios {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
+  .title-productos {
+    font-size: 1.8rem;
+  }
+  .title-servicios {
+    font-size: 1.8rem;
+  }
+  .card-productos {
+    width: 280px;
+  }
+  .title-contacto {
+    font-size: 1.8rem;
+  }
+  .hero .title-hero {
+    font-size: 2rem;
+  }
+  .hero a {
+    padding: 0.1rem 0.3rem;
+    font-size: 0.6rem;
+    top: 240px;
+  }
+  .footer p {
+    font-size: 0.6rem;
+    margin-bottom: 0;
+  }
+  .footer img {
+    width: 15px;
+  }
+  .container-historia {
+    margin: 40px 80px 0;
+  }
+  .historia h3 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+  }
+  .historia p {
+    font-size: 0.8rem;
+  }
+
+ 
+  .container-map iframe {
+    width: 280px;
+    height: 220px;
+  }  
+  
+  .container-form {
+    padding: 30px; 
+    margin: 0 80px;
+    max-width: 300px; 
+  }   
+
+  .container-form h4 {
+    font-size: 8px;
+  } 
+  
+  .formulario input {
+    width: 220px; 
+  }  
+
+  .formulario textarea {
+    margin: 5px 0 5px; 
+    max-width: 220px; 
+  } 
+ 
+
+}
+@media screen and (max-width: 320px) {
+  .container-servicios {
+    grid-template-columns: repeat(1, minmax(150px, 1fr));
+  }
+  .title-productos {
+    font-size: 1.5rem;
+  } 
+  .card-producto {
+    width: 200px;  
+  }
+}
+
+
