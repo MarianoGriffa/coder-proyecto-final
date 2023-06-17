@@ -82,6 +82,15 @@ img {
   background-color: $color-web;
 } 
 
+.navbar-toggler {
+  color: $color-light;
+  border: 1px solid $color-light;
+} 
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.10rem;
+} 
+
 .navbar-expand-lg .navbar-collapse {
   justify-content: end;
 }
